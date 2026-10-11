@@ -1,0 +1,10 @@
+{
+  "name": "hellraiserrevival-help",
+  "compatibility_date": "2026-01-01",
+  "main": "worker/cf-worker.js",
+  "assets": {
+    "directory": "dist/client",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
