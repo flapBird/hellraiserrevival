@@ -24,7 +24,7 @@ The site loads Google Analytics (`G-4JJJXB57Y7`) and Microsoft Clarity (`yw1zcvs
 
 - Production domain: **hellraiserrevival.help**. `scripts/prerender.mjs` defaults `SITE_URL` to `https://hellraiserrevival.help` (env override still works), so canonical URLs, og:url, og:image and sitemap.xml point there. Keep the domain visible in the footer bottom line and on the about/privacy pages.
 - Hero headline must stay compact and clear of the hero artwork: Roboto Slab ~66px desktop (74px ≥1600, 56px ≤1250, 48px ≤980, clamp ≤700), max-width ~700–760px, no scaleX stretching. Hero sub-line ≤16px, search box ≤520px wide / 46px tall.
-- Brand lockup is single-line and has no "GUIDES" suffix: gold cube + "HELLRAISER" (cream) + "REVIVAL" (red) baseline-aligned on one row, ~19px header / 15px footer (smaller at breakpoints). Keep the a11y label "Hellraiser Revival Guides home" even though "GUIDES" is not displayed.
+- Brand lockup is single-line and has no "GUIDES" suffix: gold cube + "HELLRAISER" (cream) + "REVIVAL" (red) baseline-aligned on one row, kept small and narrow — ~15px header / 12px footer (smaller at breakpoints), cube 34px header / 24px footer. Keep the a11y label "Hellraiser Revival Guides home" even though "GUIDES" is not displayed.
 - Category strip stays single-line and compact: icons ~30px (26px at ≤1250/980, 22px ≤700), label + arrow on one row (no wrapping), strip padding-block ~16px.
 - Header brand text must stay compact: wordmark ~20px (smaller at breakpoints), cube mark ~44px. Nav links use font-weight 500, not the default thin weight.
 - SEO constraints are hard rules, enforced by `tests/content.test.mjs`: page titles ≤ 60 characters, meta descriptions ≤ 160 characters, exactly one `<h1>` per page, no skipped heading levels (h1 → h2 → h3).
