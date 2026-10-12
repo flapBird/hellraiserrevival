@@ -1,4 +1,4 @@
-# Hellraiser Revival Guides
+# Hellraiser Revival Wiki
 
 **Live site: [https://hellraiserrevival.help](https://hellraiserrevival.help)**
 
@@ -8,12 +8,15 @@ An independent, English-language fan guide for Clive Barker's *Hellraiser: Reviv
 
 | Path | Content |
 | --- | --- |
-| `/` | Hero search, six guide categories, game brief for new players |
-| `/guides/` | Searchable guide library with category filters and saved guides |
+| `/` | Hero search, direct top navigation, popular guides, six categories and a game brief for new players |
+| `/guides/` | Inline live search with category/saved filters and URL persistence; header search and `/` focus this page instead of a popup |
 | `/beginners-guide/` | What the game is & how to play |
 | `/walkthrough/` | Opening objectives and route notes |
 | `/puzzles/`, `/genesis-configuration/` | Puzzle mechanisms with hint-first reveals |
-| `/locker-codes/` | Five location-specific combinations with copy buttons |
+| `/locker-codes/` | Ten reported lock combinations, room search, area filters, direct jumps and reveal/copy buttons |
+| `/sister-of-mercy/` | Stealth encounter and boss-fight tactics |
+| `/zora/` | Shop locations, selected stock and buying priorities |
+| `/how-long-to-beat/` | Campaign reports, guided Platinum estimate and session planning |
 | `/collectibles/` | Collectible groups and a saved firearm checklist |
 | `/trophies/` | Completion roadmap and reported missables |
 | `/crashing-fix/` | PC requirements and Steam file verification |
@@ -47,7 +50,7 @@ npm run deploy:cf  # build + wrangler deploy (config in wrangler.json)
 npm run preview:cf # local wrangler preview of the built site
 ```
 
-- `wrangler.json` serves `dist/client`, normalizes trailing slashes and returns the prerendered `404.html` with a real 404 status for unknown routes.
+- Static assets only: no `main`, asset binding or custom Cloudflare Worker script. The retired `worker/cf-worker.js` is removed; the separate Sites runtime remains intact. `wrangler.json` serves `dist/client`, normalizes trailing slashes and returns the prerendered `404.html` with a real 404 status for unknown routes.
 - `public/_headers` adds caching (immutable hashed assets, 4h for icons/robots/sitemap) and security headers.
 - Canonical URLs, `og:` metadata and the sitemap default to `https://hellraiserrevival.help` (`SITE_URL` env overrides).
 - Alternative: Cloudflare Pages with build command `npm run build` and output directory `dist/client`.

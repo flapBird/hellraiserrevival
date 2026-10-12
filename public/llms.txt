@@ -1,4 +1,4 @@
-# Hellraiser Revival Guides
+# Hellraiser Revival Wiki
 
 > Independent English-language fan guide for Clive Barker’s Hellraiser: Revival.
 
@@ -8,13 +8,16 @@ Source-linked summaries, not independently playtested. Artwork is illustrative a
 
 ## Pages
 
-- [Home](/): Search and six guide categories.
-- [Guide library](/guides/): Text search, category filters and saved guides.
+- [Home](/): Persistent top navigation with direct guide links; mobile shortcuts for Codes, Boss guide, Zora and All guides; search through the guide library, six categories and popular-guide links.
+- [Guide library](/guides/): Page-based live search, category filters and saved guides; search/filter state persists in the URL for sharing and returning from articles.
 - [What the game is & how to play](/beginners-guide/): What Hellraiser: Revival is, how its combat and puzzle boxes work, and the habits that make the first hours go smoothly.
 - [Walkthrough: where to begin](/walkthrough/): Opening objectives, a first puzzle hint and a route to the full walkthrough.
 - [Puzzle solutions: the first locks](/puzzles/): Two early mechanisms explained, with hints before the solution.
 - [Collectibles & your firearm checklist](/collectibles/): The four collectible groups, missable-item advice and a saved firearm checklist.
-- [Locker codes & safe combinations](/locker-codes/): Five location-specific combinations, hidden until you need them.
+- [All locker codes & safe combinations](/locker-codes/): Find ten reported cabinet, locker, safe and door codes by area, with location clues, optional reveals and copy buttons.
+- [Sister of Mercy: boss guide](/sister-of-mercy/): Find the Sister of Mercy fight, prepare ranged weapons, survive the red arena and finish with Hellchains.
+- [Zora: shops & buying guide](/zora/): Find Zora’s five shop stops, key weapon and recipe unlocks, buying priorities and the reported PS5 shop trophy issue.
+- [How long to beat Hellraiser: Revival?](/how-long-to-beat/): Compare reported campaign times and the guided Platinum estimate, with practical advice for planning your play sessions.
 - [Trophies: plan a safer completion run](/trophies/): Save planning, collectible requirements and the reported shop-trophy issue.
 - [PC crashing: start with these checks](/crashing-fix/): Official PC requirements, Steam file verification and useful support details.
 - [The Genesis Configuration](/genesis-configuration/): The puzzle box at the center of Aidan’s story and supernatural abilities.
@@ -23,7 +26,7 @@ Source-linked summaries, not independently playtested. Artwork is illustrative a
 
 ## Interactions
 
-Optional solution and code reveals; code-copy buttons; local bookmarks; five-firearm checklist saved in browser local storage. No account, sync or advertising integration; aggregate usage measured with Google Analytics and Microsoft Clarity on the published site only, disabled on local copies.
+Header search and the / shortcut open the guide library and focus its search field, without a modal; optional solution and code reveals; lock-location search, area filters and direct jump links; code-copy buttons; local bookmarks; five-firearm checklist saved in browser local storage. No account, sync or advertising integration; aggregate usage measured with Google Analytics and Microsoft Clarity on the published site only, disabled on local copies.
 
 ## Maintenance
 

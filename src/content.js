@@ -1,4 +1,4 @@
-export const updated = 'October 11, 2026';
+export const reviewedOn = '2026-10-11';
 export const sources = {
   walkthrough: { label: 'PowerPyx · Gage’s full walkthrough', url: 'https://www.powerpyx.com/clive-barkers-hellraiser-revival-100-walkthrough/' },
   collectibles: { label: 'PowerPyx · Collectible locations', url: 'https://www.powerpyx.com/clive-barkers-hellraiser-revival-all-collectible-locations-guide/' },
@@ -7,6 +7,10 @@ export const sources = {
   official: { label: 'Saber Interactive · Hellraiser: Revival', url: 'https://saber.games/hellraiserrevival/' },
   files: { label: 'Steam Support · Verify game files', url: 'https://help.steampowered.com/en/faqs/view/0C48-FCBD-DA71-93EB' },
   support: { label: 'Saber Interactive · Support', url: 'https://support.saber.games/hc/en' },
+  codes: { label: 'GamesRadar+ · Vic Hood’s keypad code guide', url: 'https://www.gamesradar.com/games/horror/hellraiser-revival-codes/' },
+  sister: { label: 'TheGameSlayer · Callum Marshall’s Sister of Mercy guide', url: 'https://thegameslayer.com/guides/hellraiser-revival-sister-of-mercy-boss-guide/' },
+  gamesradarReview: { label: 'GamesRadar+ · Leon Hurley’s full-game review', url: 'https://www.gamesradar.com/games/horror/clive-barkers-hellraiser-revival-review/' },
+  tomsReview: { label: 'Tom’s Guide · Rory Mellon’s PS5 Pro review', url: 'https://www.tomsguide.com/gaming/hellraiser-revival-is-intense-graphic-and-disturbing-but-its-not-ready-for-halloween-2026' },
 };
 
 export const categories = [
@@ -16,6 +20,19 @@ export const categories = [
   { id: 'locker-codes', name: 'Locker codes', icon: 'key', description: 'The combination, the location, the clue.' },
   { id: 'trophies', name: 'Trophies', icon: 'trophy', description: 'Plan your run and watch for missables.' },
   { id: 'crashing-fix', name: 'PC fixes', icon: 'tools', description: 'Practical checks to get back into the game.' },
+];
+
+export const navigationLinks = [
+  { label: 'Codes', href: '/locker-codes/', priority: true },
+  { label: 'Walkthrough', href: '/walkthrough/' },
+  { label: 'Puzzles', href: '/puzzles/' },
+  { label: 'Collectibles', href: '/collectibles/' },
+  { label: 'Boss guide', href: '/sister-of-mercy/', priority: true },
+  { label: 'Zora', href: '/zora/', priority: true },
+  { label: 'Trophies', href: '/trophies/' },
+  { label: 'PC fixes', href: '/crashing-fix/' },
+  { label: 'Playtime', href: '/how-long-to-beat/' },
+  { label: 'All guides', href: '/guides/', priority: true },
 ];
 
 export const guides = [
@@ -55,7 +72,7 @@ export const guides = [
     ], sources: ['walkthrough'], related: ['locker-codes', 'genesis-configuration', 'walkthrough'],
   },
   {
-    slug: 'collectibles', category: 'collectibles', title: 'Collectibles & your firearm checklist', shortTitle: 'Find what you missed',
+    slug: 'collectibles', category: 'collectibles', title: 'Collectibles & your firearm checklist', shortTitle: 'Find what you missed', reviewedOn: '2026-10-12',
     description: 'The four collectible groups, missable-item advice and a saved firearm checklist.', image: 'collectibles', reading: '3 min', tag: 'KEEP TRACK',
     intro: 'Check your inventory before leaving an area. This overview covers trophy-related collectible groups; the checklist below tracks firearms only.',
     note: 'No chapter select is available. Keep earlier manual saves if you want the option to return to a missed item.',
@@ -69,22 +86,95 @@ export const guides = [
         { id: 'assault-rifle', name: 'Assault rifle', detail: 'Sold at Zora’s third shop.' },
       ] },
       { id: 'recipes', title: 'Recipes and pillars', body: 'Finding recipes and crafting their items are separate requirements. Keep your own crafting record. Notes add lore but are not needed for these collectible trophies. Follow the source’s location guide for the complete recipe and pillar route.' },
-    ], sources: ['collectibles'], related: ['trophies', 'walkthrough', 'puzzles'],
+    ], sources: ['collectibles'], related: ['trophies', 'zora', 'puzzles'],
   },
   {
-    slug: 'locker-codes', category: 'locker-codes', title: 'Locker codes & safe combinations', shortTitle: 'Open the lock',
-    description: 'Five location-specific combinations, hidden until you need them.', image: 'puzzles', reading: '2 min', tag: 'QUICK ANSWERS',
-    intro: 'Match the location first, then reveal the code. These entries are attributed to the full-game PowerPyx walkthrough, not independently playtested by this site.',
+    slug: 'locker-codes', category: 'locker-codes', title: 'All locker codes & safe combinations', shortTitle: 'All codes & combinations', reviewedOn: '2026-10-12',
+    seoTitle: 'Hellraiser Revival Codes: All Lockers, Cabinets & Safes',
+    description: 'Find ten reported cabinet, locker, safe and door codes by area, with location clues, optional reveals and copy buttons.', image: 'puzzles', reading: '4 min', tag: 'QUICK ANSWERS',
+    intro: 'Looking for all Hellraiser: Revival codes? Match your cabinet, locker, safe or door to one of ten reported locations, then reveal its combination.',
+    note: 'Full-game references checked October 12, 2026. PowerPyx lists nine of these locks; GamesRadar+ also records the sewer lever room. We have not independently playtested them.',
     sections: [
+      { id: 'using-the-list', title: 'Match the room before the code', body: 'Filter by area or search a room name. The jump links take you straight to a lock; its answer stays closed. Item quantities can vary, so rewards below are examples rather than a guaranteed inventory.' },
       { id: 'combinations', title: 'Find your lock', kind: 'codes', items: [
-        { name: 'Hallway after Bruno', hint: 'Painting plaques', code: '0199', alternative: '9901', detail: 'The source reports both orders; try the alternative if needed.' },
-        { name: 'Bathroom cabinet', hint: 'Near the tub', code: '9891' },
-        { name: 'Graveyard safe', hint: 'Southeastern house', code: '9606' },
-        { name: 'Mansion cabinet', hint: 'Upper floor, southeast', code: '1966' },
-        { name: 'Voyeur room cabinet', hint: 'Near the ticket', code: '1952' },
+        { id: 'red-hallway', name: 'Red hallway cabinet', area: 'Cult & graveyard', objective: 'Escape the Cult', location: 'Hallway after sneaking past Bruno.', hint: 'Painting plaques', code: '0199', alternative: '9901', detail: 'Both sources report an alternate order.', reward: 'Bandage and crafting materials', sources: ['walkthrough', 'codes'] },
+        { id: 'bathroom', name: 'Bathroom / medical room locker', area: 'Cult & graveyard', objective: 'Escape the Cult', location: 'After the knife, beside the bathtub.', hint: 'Look at the tattoo', code: '9891', reward: 'Coins and crafting materials', sources: ['walkthrough', 'codes'] },
+        { id: 'graveyard', name: 'Graveyard house safe', area: 'Cult & graveyard', objective: 'Find a Way Out of the Graveyard', location: 'Southeastern house, beneath the kitchen print.', hint: 'Check the kitchen', code: '9606', reward: 'Pistol magazine-release upgrade', sources: ['walkthrough', 'codes'] },
+        { id: 'mansion', name: 'Mansion music room cabinet', area: 'Mansion', objective: 'Find a Statue’s Missing Part', location: 'Southeast room, upstairs in Bruno’s mansion.', hint: 'Painting date plus 300', code: '1966', reward: 'Ammunition and crafting materials', sources: ['walkthrough', 'codes'] },
+        { id: 'snake-room', name: 'Snake / voyeur room cabinet', area: 'Club', objective: 'Enter the Voyeur Room', location: 'Around the corner from the ticket table.', hint: 'Pictures in the area', code: '1952', reward: 'SMG Laser Pointer', sources: ['walkthrough', 'codes'] },
+        { id: 'private-rooms', name: 'Private rooms bathroom cabinet', area: 'Club', objective: 'Get to Marlowe', location: 'Right-hand room after the puzzle door.', hint: 'Picture in the next room', code: '1923', reward: 'Revolver Hollow Point Rounds', sources: ['walkthrough', 'codes'] },
+        { id: 'factory', name: 'Factory blue door', area: 'Factory & sewers', objective: 'Use the Elevator', location: 'Dead end south of Zora’s fourth shop.', hint: 'Numbers on statues farther ahead', code: '1362', reward: 'Rifle handguard and inventory upgrade', sources: ['walkthrough', 'codes'] },
+        { id: 'laundry', name: 'Laundry room locker', area: 'Factory & sewers', objective: 'Reclaim the Genesis Configuration from Bruno', location: 'Room revealed after the moving trap.', hint: 'Two nearby TVs', code: '8571', reward: 'Revolver Overpressure Ammunition', sources: ['walkthrough', 'codes'] },
+        { id: 'break-room', name: 'Break room locker', area: 'Factory & sewers', objective: 'Hunt Marlowe', location: 'Room with the ladder and TV.', hint: 'Numbers on walls facing away', code: '2342', reward: 'Ammunition', sources: ['walkthrough', 'codes'] },
+        { id: 'sewer-lever', name: 'Sewer lever room locker', area: 'Factory & sewers', objective: 'Hunt Marlowe', location: 'Upstairs beside the lever-operated bridge.', hint: 'Match the bridge room', code: '1512', reward: 'Not specified in the source', sources: ['codes'] },
       ] },
       { id: 'does-not-work', title: 'If a combination is rejected', body: 'Check that the room matches this entry. Keep leading zeroes when entering a code. For the first hallway lock, the source records an alternate order.' },
-    ], sources: ['walkthrough'], related: ['puzzles', 'walkthrough', 'trophies'],
+      { id: 'codebreaker', title: 'Do you need every code for Codebreaker?', body: 'The trophy requires five keypad locks. Keep earlier saves before leaving an area; the campaign has no chapter select. These entries cover number pads — the rotating mansion safe is in the puzzle guide.' },
+    ], sources: ['walkthrough', 'codes', 'trophies'], related: ['puzzles', 'zora', 'trophies'],
+  },
+  {
+    slug: 'sister-of-mercy', category: 'walkthrough', title: 'Sister of Mercy: boss guide', shortTitle: 'Beat Sister of Mercy', reviewedOn: '2026-10-12',
+    seoTitle: 'Hellraiser Revival: Sister of Mercy Boss Guide',
+    description: 'Find the Sister of Mercy fight, prepare ranged weapons, survive the red arena and finish with Hellchains.',
+    image: 'walkthrough', reading: '3 min', tag: 'BOSS HELP',
+    intro: 'The Sister of Mercy encounter has an earlier stealth section and a later boss fight. This guide helps you identify which one you are in.',
+    note: 'Encounter spoilers below. Tactics are attributed to PowerPyx and TheGameSlayer; difficulty and patches can affect your experience.',
+    sections: [
+      { id: 'stealth-or-boss', title: 'Stealth encounter or boss fight?', body: 'During “Get the Genesis Configuration Back,” distract her with bottles and reach the opening upstairs. The later “Claim the Sister of Mercy’s Heart” objective is the boss fight. Place the Gagged Skull in the door beside the shop to continue toward it.' },
+      { id: 'prepare', title: 'Prepare at the nearby shop', kind: 'steps', items: ['Save, replenish ammunition and carry healing items.', 'Bring the shotgun with Dragon Breath Rounds if available, plus an SMG or assault rifle.', 'Keep a ranged weapon ready: she flies around the dance floor, making melee a poor fit.'] },
+      { id: 'attack-patterns', title: 'Fire, ranged damage and knife attacks', body: 'TheGameSlayer recommends igniting her with the shotgun, then using automatic fire during the opening. Keep moving to collect arena ammunition. When she throws blades, prioritize dodging or cover; later volleys are more dangerous.' },
+      { id: 'red-arena', title: 'When the arena turns red', kind: 'spoiler', hint: 'The red haze marks a change in the fight. Watch for her approach instead of firing blindly.', answer: 'Find her silhouette and shoot as she closes in. Enough damage drops her and opens a Hellchains prompt. Use that prompt, then repeat the attack-and-dodge cycle through the remaining phases.' },
+      { id: 'after-the-fight', title: 'Before leaving the dance floor', body: 'Collect the heart and her Whip, which can be sold to Zora. The route onward opens behind the DJ booth. Defeating her awards the “No Mercy” story trophy.' },
+    ], sources: ['walkthrough', 'sister', 'trophies'], related: ['zora', 'genesis-configuration', 'trophies'],
+  },
+  {
+    slug: 'zora', category: 'collectibles', title: 'Zora: shops & buying guide', shortTitle: 'Zora’s shops & upgrades', reviewedOn: '2026-10-12',
+    seoTitle: 'Hellraiser Revival Zora: Shops, Upgrades & Buying Tips',
+    description: 'Find Zora’s five shop stops, key weapon and recipe unlocks, buying priorities and the reported PS5 shop trophy issue.',
+    image: 'collectibles', reading: '3 min', tag: 'SHOP & UPGRADES',
+    intro: 'Zora sells weapons, upgrades and crafting recipes. Use your current objective to match the shop stop, then check which purchases your progress has unlocked.',
+    note: 'Selected stock, not a complete inventory. Prices and progression are taken from PowerPyx’s launch guides. This page covers shopping without revealing Zora’s late-story role.',
+    sections: [
+      { id: 'shop-stops', title: 'Where do you find Zora?', kind: 'table', headers: ['Shop stop', 'Progress marker', 'Plan ahead'], rows: [
+        ['1 · Sewers', 'Climb the ladder during Escape Charlotte', 'Save before buying or selling'],
+        ['2 · Mansion / swamp', 'Open the Gate to Charlotte', 'Recheck stock after statue parts'],
+        ['3 · Club', 'Hunt Marlowe, after Charlotte', 'Assault rifle becomes available'],
+        ['4 · Factory', 'Use the Elevator, after Sister of Mercy', 'Finish recipes before moving on'],
+        ['5 · Final stop', 'After climbing out of the trapdoor', 'Last purchases before the final boss'],
+      ] },
+      { id: 'selected-stock', title: 'Key purchases and unlocks', kind: 'table', headers: ['Item', 'When available', 'Coins'], rows: [
+        ['Lockpick recipe', 'First shop', '120'],
+        ['Basic Repair Kit recipe', 'First shop', '120'],
+        ['Medkit recipe', 'First shop', '200'],
+        ['Advanced Repair Kit recipe', 'Second shop', '180'],
+        ['Revolver', 'Second shop, after the Statue’s Head', '300'],
+        ['Shotgun Dragon Breath Rounds', 'Second shop, after the Statue’s Head', '360'],
+        ['Assault rifle', 'Third shop', '450'],
+        ['Assault Rifle AP Rounds', 'Third shop, after returning from the Labyrinth', '180'],
+      ] },
+      { id: 'buying-priorities', title: 'What should you buy first?', body: 'Our planning advice: cover ammunition and healing for the next encounter before spending on optional upgrades. Completion runs also need recipe money. Sell items marked Treasure and use the shop storage chest to free inventory space; boss valuables are useful sale items.' },
+      { id: 'shop-trophies', title: 'Save before the first shop', body: 'PowerPyx reports a launch PS5 tracking problem after this visit. The thresholds are 666 coins spent and 999 earned from sales. Keep a manual save before trying the source’s buy-and-sell workaround, and check its current notes for your build.' },
+      { id: 'last-chance', title: 'Use the factory stop for completion planning', body: 'The fourth shop gives you time to finish recipe purchases and crafting. The final shop is followed by the last boss, so gather the materials you need beforehand. See the collectible checklist and trophy roadmap for the rest of your run.' },
+    ], sources: ['walkthrough', 'collectibles', 'trophies'], related: ['collectibles', 'sister-of-mercy', 'trophies'],
+  },
+  {
+    slug: 'how-long-to-beat', category: 'walkthrough', title: 'How long to beat Hellraiser: Revival?', shortTitle: 'How long to beat?', reviewedOn: '2026-10-12',
+    seoTitle: 'How Long Is Hellraiser Revival? Campaign & Platinum',
+    description: 'Compare reported campaign times and the guided Platinum estimate, with practical advice for planning your play sessions.',
+    image: 'walkthrough', reading: '2 min', tag: 'PLAN YOUR RUN',
+    intro: 'Allow roughly 9–10 hours for a first campaign as a planning estimate. Published reviewers report just under nine hours and ten hours; those are individual runs, not a measured player average.',
+    note: 'Full-game reports checked October 12, 2026. Your difficulty, exploration, retries and use of guides will change the time you need.',
+    sections: [
+      { id: 'reported-times', title: 'Campaign and completion reports', kind: 'table', headers: ['Type of run', 'Reported time', 'Source / scope'], rows: [
+        ['Campaign', 'Just under 9 hours', 'Leon Hurley · GamesRadar+ review'],
+        ['Campaign', '10 hours', 'Rory Mellon · Tom’s Guide, PS5 Pro'],
+        ['Guided Platinum / 100%', '8–10 hours', 'PowerPyx roadmap estimate'],
+      ] },
+      { id: 'why-times-differ', title: 'Why can a completion estimate look shorter?', body: 'These figures come from different players and methods. A route-led trophy estimate cannot be compared directly with a first review playthrough. Allow extra time if you explore without answers or need to replay an earlier save.' },
+      { id: 'plan-sessions', title: 'Plan your play sessions', body: 'At two hours per session, a 9–10-hour campaign works out to about five sessions; at three hours, about three to four. These are calculations from the planning range, rather than extra playtest results.' },
+      { id: 'completion-planning', title: 'Leave room for missed items', body: 'PowerPyx reports no chapter select or post-story free roam. Spread out your eight manual saves and check recipes, firearms and pillars before moving on. A missed requirement can add replay time beyond the guided estimate.' },
+      { id: 'demo-length', title: 'Does this estimate include the demo?', body: 'No: the figures above describe full-game runs. We do not have a verified demo completion average to compare with them. Use the demo as a separate trial rather than subtracting a fixed duration from the campaign.' },
+    ], sources: ['gamesradarReview', 'tomsReview', 'trophies'], related: ['beginners-guide', 'walkthrough', 'trophies'],
   },
   {
     slug: 'trophies', category: 'trophies', title: 'Trophies: plan a safer completion run', shortTitle: 'Before you chase Platinum',
@@ -125,6 +215,10 @@ export const guides = [
   },
 ];
 
+export const popularGuides = ['locker-codes', 'sister-of-mercy', 'zora', 'how-long-to-beat'];
+export const lastReviewedOn = guides.reduce((date, guide) => guide.reviewedOn > date ? guide.reviewedOn : date, reviewedOn);
+export const formatReviewDate = date => new Date(`${date}T00:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+
 export const getGuide = slug => guides.find(guide => guide.slug === slug);
 export function searchGuides(query = '', category = 'all') {
   const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
@@ -133,10 +227,10 @@ export function searchGuides(query = '', category = 'all') {
 export const pagePaths = ['/', '/guides/', ...guides.map(g => `/${g.slug}/`), '/about/', '/privacy/'];
 export function pageMeta(path) {
   const guide = getGuide(path.split('/').filter(Boolean)[0]);
-  if (guide) return { title: `${guide.title} | Hellraiser Guides`, description: guide.description };
+  if (guide) return { title: guide.seoTitle || `${guide.title} | Hellraiser Guides`, description: guide.description };
   if (path === '/guides/') return { title: 'Guide Library | Hellraiser Revival Walkthroughs & Codes', description: 'Search focused Hellraiser: Revival guides for puzzles, locker codes, collectibles, trophies and PC troubleshooting.' };
   if (path === '/about/') return { title: 'About & Editorial Policy | Hellraiser Revival Guides', description: 'How this independent fan guide uses sources, labels coverage and handles corrections.' };
   if (path === '/privacy/') return { title: 'Privacy | Hellraiser Revival Guides', description: 'Local bookmarks and checklists, with no account required.' };
   if (path !== '/') return { title: 'Page not found | Hellraiser Revival Guides', description: 'Find your way back to the Hellraiser: Revival guide library.' };
-  return { title: 'Hellraiser Revival Guides | Walkthrough & Puzzle Help', description: 'Independent Hellraiser: Revival guide: what the game is, how to play, walkthrough notes, puzzle solutions, locker codes and PC help.' };
+  return { title: 'Hellraiser Revival Wiki', description: 'Independent Hellraiser Revival wiki: walkthrough notes, locker and safe codes, puzzles, Sister of Mercy, Zora, trophies and PC fixes.' };
 }

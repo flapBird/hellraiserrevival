@@ -10,7 +10,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 ## Cloudflare deployment (user decision, 2026-10-12)
 
-The production target is Cloudflare. Deployment path: Workers static assets — `wrangler.json` points `assets.directory` at `dist/client`, `main` is `worker/cf-worker.js` (a pass-through `env.ASSETS.fetch`), and `not_found_handling: "404-page"` serves the prerendered 404 page with a real 404 status (correct for SEO; do NOT switch to an SPA index fallback). `npm run deploy:cf` builds then deploys, `npm run preview:cf` runs wrangler dev. Alternative: Cloudflare Pages with build command `npm run build` and output directory `dist/client`. Keep Sites artifacts (`worker/index.js`, `.openai/hosting.json`, `dist/server/`) untouched — CF serves only `dist/client`. Caching/security headers live in `public/_headers` (hashed `assets/*` immutable, icons/robots/sitemap 4h, nosniff + referrer policy + X-Frame-Options on everything); it is copied to `dist/client` by the build. `tests/cloudflare.test.mjs` guards this wiring.
+The production target is Cloudflare. Deployment path: Workers static assets only — `wrangler.json` points `assets.directory` at `dist/client`, declares no `main` or asset binding, the obsolete `worker/cf-worker.js` is removed, and `not_found_handling: "404-page"` serves the prerendered 404 page with a real 404 status (correct for SEO; do NOT switch to an SPA index fallback). `npm run deploy:cf` builds then deploys, `npm run preview:cf` runs wrangler dev. Alternative: Cloudflare Pages with build command `npm run build` and output directory `dist/client`. Keep Sites artifacts (`worker/index.js`, `.openai/hosting.json`, `dist/server/`) untouched — CF serves only `dist/client`. Caching/security headers live in `public/_headers` (hashed `assets/*` immutable, icons/robots/sitemap 4h, nosniff + referrer policy + X-Frame-Options on everything); it is copied to `dist/client` by the build. `tests/cloudflare.test.mjs` guards this wiring.
 
 ## Icon design decision
 
@@ -29,3 +29,21 @@ The site loads Google Analytics (`G-4JJJXB57Y7`) and Microsoft Clarity (`yw1zcvs
 - Header brand text must stay compact: wordmark ~20px (smaller at breakpoints), cube mark ~44px. Nav links use font-weight 500, not the default thin weight.
 - SEO constraints are hard rules, enforced by `tests/content.test.mjs`: page titles ≤ 60 characters, meta descriptions ≤ 160 characters, exactly one `<h1>` per page, no skipped heading levels (h1 → h2 → h3).
 - The site must explain the game itself: keep the homepage "NEW TO THE GAME?" brief section and the `beginners-guide` article ("What the game is & how to play") as the entry content for new players.
+
+## Guide expansion (user-approved scope, 2026-10-12)
+
+- Keep the homepage popular-guide entry compact and consistent with the current design. It links to the existing codes route plus Sister of Mercy, Zora and campaign length; preserve the beginner section.
+- Cabinet, locker, safe and keypad codes share `/locker-codes/`, with room search, area filters, direct links, optional reveals and copying. Attribute reported answers and distinguish sources that cover fewer locations; do not claim independent playtesting.
+- Sister of Mercy separates the stealth encounter from the boss fight. Zora covers shops and selected unlocks without late-story spoilers. Campaign length separates individual review runs from a guided trophy estimate.
+
+## Readability & navigation (user feedback, 2026-10-12)
+
+- Homepage section headings and guide/link-card titles must stay restrained: Inter, approximately 18px section headings (16px mobile), 16–18px card/subsection headings, moderate weight and tight letter spacing. Avoid the oversized Bodoni headings and widely spaced section labels shown in the rejected screenshots. Hero and brand typography retain their existing conventions.
+- Important guides must be directly reachable from the top navigation. Codes is the first link, followed by walkthrough, puzzles, collectibles, Boss guide, Zora, trophies, PC fixes, playtime and the full library.
+- Keep the header visible while scrolling. At tablet/mobile widths, show Codes, Boss guide, Zora and All guides as a compact second navigation row; keep every destination in the menu as well.
+
+- Apply the same restrained typography throughout inner pages: shared Inter h1 at 32px desktop, 30px tablet and 26px mobile; article/info/empty-state h2 at 20px desktop and 18px mobile; sidebar h3 at 16px. Keep heading levels intact, allow long titles to wrap naturally, and keep the article contents sidebar below the sticky header.
+
+- Header navigation must remain readable: 16px desktop links, 14px tablet shortcuts, 13px mobile shortcuts and 15px menu links. Switch to the shortcut/menu layout at 1250px to give the ten links enough room.
+- Homepage SEO title is exactly `Hellraiser Revival Wiki`; keep the HTML template, generated metadata and llms.txt consistent with it. This is the user-selected search positioning, not a claim of guaranteed rankings.
+- Search uses the guide library as a full page, never a modal. Header search and `/` focus the library search field; results update inline, with a clear button and query/category/saved filters preserved in the URL for refresh, sharing and returning from articles.

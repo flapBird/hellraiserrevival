@@ -2,14 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 
-test('Cloudflare deployment is wired to the built client', () => {
+test('Cloudflare deployment is a pure static-assets project', () => {
   const config = JSON.parse(readFileSync('wrangler.json', 'utf8'));
-  assert.equal(config.main, 'worker/cf-worker.js');
   assert.equal(config.assets.directory, 'dist/client');
   assert.equal(config.assets.not_found_handling, '404-page');
-  assert.ok(existsSync('worker/cf-worker.js'));
-  const worker = readFileSync('worker/cf-worker.js', 'utf8');
-  assert.ok(worker.includes('env.ASSETS.fetch'));
+  assert.equal(config.main, undefined, 'static site must not declare a Worker entry');
+  assert.equal(config.assets.binding, undefined, 'asset binding is only needed by Worker code');
+  assert.ok(!existsSync('worker/cf-worker.js'), 'obsolete pass-through worker removed');
 });
 
 test('Built client carries Cloudflare headers, 404 page and crawler files', () => {
