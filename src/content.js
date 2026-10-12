@@ -38,6 +38,8 @@ export const navigationLinks = [
 export const guides = [
   {
     slug: 'beginners-guide', category: 'walkthrough', title: 'What the game is & how to play', shortTitle: 'New to the game?',
+    seoTitle: 'Hellraiser Revival Beginner’s Guide: How to Play',
+    seoDescription: 'New to Hellraiser Revival? Learn how objectives, combat and the Genesis Configuration work, with exploration and manual-save tips for your first hours.',
     description: 'What Hellraiser: Revival is, how its combat and puzzle boxes work, and the habits that make the first hours go smoothly.',
     image: 'walkthrough', reading: '3 min', tag: 'NEW TO THE GAME',
     intro: 'New to Clive Barker’s Hellraiser: Revival? Here is what kind of game it is, how a run fits together and the habits worth building in the first hours.',
@@ -51,6 +53,8 @@ export const guides = [
   },
   {
     slug: 'walkthrough', category: 'walkthrough', title: 'Walkthrough: where to begin', shortTitle: 'Follow the walkthrough',
+    seoTitle: 'Hellraiser Revival Walkthrough: Opening Guide',
+    seoDescription: 'Start the Hellraiser Revival walkthrough with opening objectives, a Labyrinth puzzle hint and links to the full campaign route.',
     description: 'Opening objectives, a first puzzle hint and a route to the full walkthrough.', image: 'walkthrough', reading: '2 min', tag: 'START HERE',
     intro: 'Start with your current objective. This opening guide helps you find your bearings, then points you to the detailed, independently published route.',
     note: 'Opening-game guidance only. This page is not a complete campaign walkthrough.',
@@ -63,6 +67,8 @@ export const guides = [
   },
   {
     slug: 'puzzles', category: 'puzzles', title: 'Puzzle solutions: the first locks', shortTitle: 'Solve the puzzle',
+    seoTitle: 'Hellraiser Revival Puzzle Solutions: Skull & Disc Safe',
+    seoDescription: 'Solve Hellraiser Revival’s office skull and mansion disc safe with hints and hidden answers, plus links to keypad codes.',
     description: 'Two early mechanisms explained, with hints before the solution.', image: 'puzzles', reading: '2 min', tag: 'PUZZLE HELP',
     intro: 'Use the hint first if you want a nudge. Each solution stays hidden until you choose to reveal it.',
     sections: [
@@ -73,6 +79,8 @@ export const guides = [
   },
   {
     slug: 'collectibles', category: 'collectibles', title: 'Collectibles & your firearm checklist', shortTitle: 'Find what you missed', reviewedOn: '2026-10-12',
+    seoTitle: 'Hellraiser Revival Collectibles & Firearm Checklist',
+    seoDescription: 'Track Hellraiser Revival’s five firearms with a saved checklist. Review collectible groups, recipe requirements and tips for avoiding missed items.',
     description: 'The four collectible groups, missable-item advice and a saved firearm checklist.', image: 'collectibles', reading: '3 min', tag: 'KEEP TRACK',
     intro: 'Check your inventory before leaving an area. This overview covers trophy-related collectible groups; the checklist below tracks firearms only.',
     note: 'No chapter select is available. Keep earlier manual saves if you want the option to return to a missed item.',
@@ -91,6 +99,7 @@ export const guides = [
   {
     slug: 'locker-codes', category: 'locker-codes', title: 'All locker codes & safe combinations', shortTitle: 'All codes & combinations', reviewedOn: '2026-10-12',
     seoTitle: 'Hellraiser Revival Codes: All Lockers, Cabinets & Safes',
+    seoDescription: 'Find 10 reported Hellraiser Revival cabinet, locker, safe and door codes. Search rooms, filter areas, reveal answers and copy combinations.',
     description: 'Find ten reported cabinet, locker, safe and door codes by area, with location clues, optional reveals and copy buttons.', image: 'puzzles', reading: '4 min', tag: 'QUICK ANSWERS',
     intro: 'Looking for all Hellraiser: Revival codes? Match your cabinet, locker, safe or door to one of ten reported locations, then reveal its combination.',
     note: 'Full-game references checked October 12, 2026. PowerPyx lists nine of these locks; GamesRadar+ also records the sewer lever room. We have not independently playtested them.',
@@ -115,6 +124,7 @@ export const guides = [
   {
     slug: 'sister-of-mercy', category: 'walkthrough', title: 'Sister of Mercy: boss guide', shortTitle: 'Beat Sister of Mercy', reviewedOn: '2026-10-12',
     seoTitle: 'Hellraiser Revival: Sister of Mercy Boss Guide',
+    seoDescription: 'Hellraiser Revival Sister of Mercy guide: distinguish the stealth encounter from the boss fight, prepare weapons and handle the red arena.',
     description: 'Find the Sister of Mercy fight, prepare ranged weapons, survive the red arena and finish with Hellchains.',
     image: 'walkthrough', reading: '3 min', tag: 'BOSS HELP',
     intro: 'The Sister of Mercy encounter has an earlier stealth section and a later boss fight. This guide helps you identify which one you are in.',
@@ -130,6 +140,7 @@ export const guides = [
   {
     slug: 'zora', category: 'collectibles', title: 'Zora: shops & buying guide', shortTitle: 'Zora’s shops & upgrades', reviewedOn: '2026-10-12',
     seoTitle: 'Hellraiser Revival Zora: Shops, Upgrades & Buying Tips',
+    seoDescription: 'Find Zora’s five shop stops in Hellraiser Revival, selected weapons and recipe prices, buying tips and notes on the reported PS5 shop trophy issue.',
     description: 'Find Zora’s five shop stops, key weapon and recipe unlocks, buying priorities and the reported PS5 shop trophy issue.',
     image: 'collectibles', reading: '3 min', tag: 'SHOP & UPGRADES',
     intro: 'Zora sells weapons, upgrades and crafting recipes. Use your current objective to match the shop stop, then check which purchases your progress has unlocked.',
@@ -160,6 +171,7 @@ export const guides = [
   {
     slug: 'how-long-to-beat', category: 'walkthrough', title: 'How long to beat Hellraiser: Revival?', shortTitle: 'How long to beat?', reviewedOn: '2026-10-12',
     seoTitle: 'How Long Is Hellraiser Revival? Campaign & Platinum',
+    seoDescription: 'How long is Hellraiser Revival? Compare reported campaign times with a guided Platinum estimate and plan sessions, saves and collectible checks.',
     description: 'Compare reported campaign times and the guided Platinum estimate, with practical advice for planning your play sessions.',
     image: 'walkthrough', reading: '2 min', tag: 'PLAN YOUR RUN',
     intro: 'Allow roughly 9–10 hours for a first campaign as a planning estimate. Published reviewers report just under nine hours and ten hours; those are individual runs, not a measured player average.',
@@ -178,6 +190,8 @@ export const guides = [
   },
   {
     slug: 'trophies', category: 'trophies', title: 'Trophies: plan a safer completion run', shortTitle: 'Before you chase Platinum',
+    seoTitle: 'Hellraiser Revival Trophy Guide & Platinum Roadmap',
+    seoDescription: 'Plan a Hellraiser Revival PS5 trophy run with a compact roadmap, manual-save tips, collectible requirements and notes on reported shop trophy issues.',
     description: 'Save planning, collectible requirements and the reported shop-trophy issue.', image: 'collectibles', reading: '3 min', tag: 'COMPLETION',
     intro: 'A little planning can save a second run. This is a compact roadmap, not a full trophy list. Counts and launch issues below come from PowerPyx’s PS5 guide.',
     sections: [
@@ -189,6 +203,8 @@ export const guides = [
   },
   {
     slug: 'crashing-fix', category: 'crashing-fix', title: 'PC crashing: start with these checks', shortTitle: 'Get back into the game',
+    seoTitle: 'Hellraiser Revival PC Crashes: Troubleshooting Guide',
+    seoDescription: 'Troubleshoot Hellraiser Revival PC crashes with published system requirements, Steam file verification steps and details to include in a support report.',
     description: 'Official PC requirements, Steam file verification and useful support details.', image: 'walkthrough', reading: '3 min', tag: 'PC SUPPORT',
     intro: 'Start with checks you can reverse and record what changes. These are general Steam troubleshooting steps; there is no single confirmed fix for every Hellraiser: Revival crash.',
     sections: [
@@ -205,6 +221,8 @@ export const guides = [
   },
   {
     slug: 'genesis-configuration', category: 'puzzles', title: 'The Genesis Configuration', shortTitle: 'Understand the box',
+    seoTitle: 'Hellraiser Revival Genesis Configuration Explained',
+    seoDescription: 'Learn what the Genesis Configuration does in Hellraiser Revival, how it connects to Aidan’s story and combat, and where to find puzzle help.',
     description: 'The puzzle box at the center of Aidan’s story and supernatural abilities.', image: 'puzzles', reading: '2 min', tag: 'THE ESSENTIALS',
     intro: 'The Genesis Configuration is more than an object to carry. It connects Aidan’s search for Sunny to the Labyrinth and the powers he uses to survive.',
     sections: [
@@ -227,10 +245,10 @@ export function searchGuides(query = '', category = 'all') {
 export const pagePaths = ['/', '/guides/', ...guides.map(g => `/${g.slug}/`), '/about/', '/privacy/'];
 export function pageMeta(path) {
   const guide = getGuide(path.split('/').filter(Boolean)[0]);
-  if (guide) return { title: guide.seoTitle || `${guide.title} | Hellraiser Guides`, description: guide.description };
-  if (path === '/guides/') return { title: 'Guide Library | Hellraiser Revival Walkthroughs & Codes', description: 'Search focused Hellraiser: Revival guides for puzzles, locker codes, collectibles, trophies and PC troubleshooting.' };
-  if (path === '/about/') return { title: 'About & Editorial Policy | Hellraiser Revival Guides', description: 'How this independent fan guide uses sources, labels coverage and handles corrections.' };
-  if (path === '/privacy/') return { title: 'Privacy | Hellraiser Revival Guides', description: 'Local bookmarks and checklists, with no account required.' };
-  if (path !== '/') return { title: 'Page not found | Hellraiser Revival Guides', description: 'Find your way back to the Hellraiser: Revival guide library.' };
-  return { title: 'Hellraiser Revival Wiki', description: 'Independent Hellraiser Revival wiki: walkthrough notes, locker and safe codes, puzzles, Sister of Mercy, Zora, trophies and PC fixes.' };
+  if (guide && path === `/${guide.slug}/`) return { title: guide.seoTitle || `${guide.title} | Hellraiser Guides`, description: guide.seoDescription || guide.description };
+  if (path === '/guides/') return { title: 'Guide Library | Hellraiser Revival Walkthroughs & Codes', description: 'Search Hellraiser Revival guides for codes, puzzles, collectibles, Sister of Mercy, trophies and PC help. Filter by category or return to your saved guides.' };
+  if (path === '/about/') return { title: 'About & Editorial Policy | Hellraiser Revival Guides', description: 'About hellraiserrevival.help: an independent Hellraiser Revival fan guide. Read our source policy, coverage limits, correction notes and artwork disclosure.' };
+  if (path === '/privacy/') return { title: 'Privacy | Hellraiser Revival Guides', description: 'Read how hellraiserrevival.help handles local bookmarks, checklists and search, plus Google Analytics, Microsoft Clarity and hosting request logs.' };
+  if (path !== '/') return { title: 'Page not found | Hellraiser Revival Guides', description: 'This Hellraiser Revival page could not be found. Return to the guide library for codes, puzzles, walkthrough notes, collectibles and PC help.' };
+  return { title: 'Hellraiser Revival Wiki | Walkthrough, Codes & Guides', description: 'Hellraiser Revival wiki with walkthrough notes, locker and safe codes, puzzle solutions, Sister of Mercy tactics, Zora shops, trophies and PC help.' };
 }

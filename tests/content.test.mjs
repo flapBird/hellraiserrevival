@@ -88,19 +88,20 @@ test('Lock jump links resolve, answers stay collapsed and every lock has its own
   assert.ok(html.includes('Filter locks by area'));
 });
 test('SEO: titles stay within 60 characters and descriptions within 160', () => {
-  for (const path of pagePaths) {
+  for (const path of [...pagePaths, '/404/']) {
     const meta = pageMeta(path);
     assert.ok(meta.title.length > 0 && meta.title.length <= 60, `${path}: title is ${meta.title.length} chars ("${meta.title}")`);
     assert.ok(meta.description.length > 0 && meta.description.length <= 160, `${path}: description is ${meta.description.length} chars`);
   }
 });
 test('Homepage wiki title stays consistent across template and generated metadata', () => {
-  const title = 'Hellraiser Revival Wiki';
+  const title = 'Hellraiser Revival Wiki | Walkthrough, Codes & Guides';
+  const escapedTitle = title.replace(/&/g, '&amp;');
   const home = readFileSync('dist/client/index.html', 'utf8');
   assert.equal(pageMeta('/').title, title);
-  assert.ok(readFileSync('index.html', 'utf8').includes(`<title>${title}</title>`));
-  assert.ok(home.includes(`<title>${title}</title>`));
-  assert.ok(home.includes(`<meta property="og:title" content="${title}"`));
+  assert.ok(readFileSync('index.html', 'utf8').includes(`<title>${escapedTitle}</title>`));
+  assert.ok(home.includes(`<title>${escapedTitle}</title>`));
+  assert.ok(home.includes(`<meta property="og:title" content="${escapedTitle}"`));
   const schema = JSON.parse(home.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
   assert.equal(schema.headline, title);
 });

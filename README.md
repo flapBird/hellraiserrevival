@@ -27,7 +27,8 @@ An independent, English-language fan guide for Clive Barker's *Hellraiser: Reviv
 
 - React 19 + Vite 6, plain CSS (`src/styles.css`), Phosphor icons
 - Fully prerendered static output: `npm run build` renders every route (plus `404.html`, `robots.txt`, `sitemap.xml`, `llms.txt`) with `react-dom/server` in `scripts/prerender.mjs`
-- All guide content lives in `src/content.js` — edit there; titles/descriptions and the sitemap regenerate on build
+- All guide content lives in `src/content.js` — edit `seoTitle`/`seoDescription` for search metadata and `description` for compact UI cards; metadata and the sitemap regenerate on build
+- Shared SEO metadata in `src/seo.js` and head rendering in `scripts/seo-head.mjs` serve route-specific canonicals, titles, descriptions, Open Graph and structured data in both initial Vite HTML and prerendered production pages
 - Client-side extras (search, filters, bookmarks, code copy) hydrate on top of the static HTML
 
 ## Local development
@@ -52,7 +53,7 @@ npm run preview:cf # local wrangler preview of the built site
 
 - Static assets only: no `main`, asset binding or custom Cloudflare Worker script. The retired `worker/cf-worker.js` is removed; the separate Sites runtime remains intact. `wrangler.json` serves `dist/client`, normalizes trailing slashes and returns the prerendered `404.html` with a real 404 status for unknown routes.
 - `public/_headers` adds caching (immutable hashed assets, 4h for icons/robots/sitemap) and security headers.
-- Canonical URLs, `og:` metadata and the sitemap default to `https://hellraiserrevival.help` (`SITE_URL` env overrides).
+- Canonical URLs, `og:` metadata and the sitemap default to `https://hellraiserrevival.help` (`SITE_URL` env overrides). Query strings and fragments are omitted from canonical URLs; guide-library search variants use `/guides/`. Unknown routes retain the noindex 404 metadata.
 - Alternative: Cloudflare Pages with build command `npm run build` and output directory `dist/client`.
 
 ## Conventions

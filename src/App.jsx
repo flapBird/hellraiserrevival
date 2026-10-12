@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, ArrowUpRight, BookOpen, BookmarkSimple, Clock, Compass, Copy, Cube, Eye, Key, List, MagnifyingGlass, ShieldCheck, Trophy, Wrench, X } from '@phosphor-icons/react';
-import { categories, formatReviewDate, getGuide, lastReviewedOn, navigationLinks, pageMeta, popularGuides, reviewedOn, searchGuides, sources } from './content.js';
+import { categories, formatReviewDate, getGuide, lastReviewedOn, navigationLinks, popularGuides, reviewedOn, searchGuides, sources } from './content.js';
+import { normalizePagePath, syncPageSeo } from './seo.js';
 
 const iconMap = { book: BookOpen, cube: Cube, compass: Compass, key: Key, trophy: Trophy, tools: Wrench, clock: Clock };
 const image = name => `/assets/${name}.jpg`;
@@ -104,9 +105,9 @@ function InfoPage({ privacy = false }) {
 }
 function Footer() { return <footer className="footer"><div className="container footer-top"><Brand /><nav aria-label="Footer navigation"><a href="/guides/">All guides</a><a href="/guides/?saved=1">Saved guides</a><a href="/about/">About & sources</a><a href="/privacy/">Privacy</a><a href={sources.official.url} target="_blank" rel="noreferrer">Official game <ArrowUpRight size={14} /></a></nav></div><div className="container footer-bottom"><p>Independent fan guide at hellraiserrevival.help. Game names and characters belong to their respective owners.</p><p>Artwork is illustrative, not gameplay footage.</p></div></footer>; }
 export function App({ initialPath }) {
-  const path = initialPath || (typeof window !== 'undefined' ? window.location.pathname : '/'); const normalized = path === '/' ? '/' : `${path.replace(/\/$/, '')}/`;
+  const path = initialPath || (typeof window !== 'undefined' ? window.location.pathname : '/'); const normalized = normalizePagePath(path);
   const guide = getGuide(normalized.split('/').filter(Boolean)[0]); const isGuide = guide && normalized === `/${guide.slug}/`;
   const [saved, toggleSaved, storageError] = useSavedArray('hellraiser-bookmarks-v1');
-  useEffect(() => { const meta = pageMeta(normalized); document.title = meta.title; document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description); const onKey = e => { const tag = document.activeElement?.tagName; if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(tag) && !document.activeElement?.isContentEditable) { e.preventDefault(); if (normalized === '/guides/') document.getElementById('guide-search')?.focus(); else window.location.assign('/guides/?search=1'); } }; document.addEventListener('keydown', onKey); return () => document.removeEventListener('keydown', onKey); }, [normalized]);
+  useEffect(() => { syncPageSeo(normalized); const onKey = e => { const tag = document.activeElement?.tagName; if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(tag) && !document.activeElement?.isContentEditable) { e.preventDefault(); if (normalized === '/guides/') document.getElementById('guide-search')?.focus(); else window.location.assign('/guides/?search=1'); } }; document.addEventListener('keydown', onKey); return () => document.removeEventListener('keydown', onKey); }, [normalized]);
   return <><a className="skip-link" href="#main-content">Skip to content</a><Header path={normalized} /><main id="main-content">{normalized === '/' ? <Home /> : normalized === '/guides/' ? <Library saved={saved} /> : isGuide ? <Article guide={guide} saved={saved} toggleSaved={toggleSaved} storageError={storageError} /> : normalized === '/about/' ? <InfoPage /> : normalized === '/privacy/' ? <InfoPage privacy /> : <div className="container not-found"><p className="eyebrow">404 · A WRONG TURN</p><h1>This path leads nowhere.</h1><p>Let’s find your way back.</p><a className="button" href="/guides/">Return to the guides <ArrowRight size={20} /></a></div>}</main><Footer /></>;
 }

@@ -1,4 +1,4 @@
-# Hellraiser Revival Wiki
+# Hellraiser Revival Wiki | Walkthrough, Codes & Guides
 
 > Independent English-language fan guide for Clive Barker’s Hellraiser: Revival.
 
@@ -27,6 +27,10 @@ Source-linked summaries, not independently playtested. Artwork is illustrative a
 ## Interactions
 
 Header search and the / shortcut open the guide library and focus its search field, without a modal; optional solution and code reveals; lock-location search, area filters and direct jump links; code-copy buttons; local bookmarks; five-firearm checklist saved in browser local storage. No account, sync or advertising integration; aggregate usage measured with Google Analytics and Microsoft Clarity on the published site only, disabled on local copies.
+
+## SEO
+
+Production origin: https://hellraiserrevival.help. Every page has an absolute, route-specific canonical in its initial HTML, matching Open Graph and structured-data URLs. Search and filter variants canonicalize to /guides/ without query strings or fragments. Homepage title: Hellraiser Revival Wiki | Walkthrough, Codes & Guides. Titles stay within 60 characters and unique page descriptions within 160; unknown pages are noindex and excluded from the sitemap.
 
 ## Maintenance
 
