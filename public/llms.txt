@@ -8,7 +8,7 @@ Source-linked summaries, not independently playtested. Artwork is illustrative a
 
 ## Pages
 
-- [Home](/): Persistent top navigation with direct guide links and a single current-page highlight; mobile shortcuts for Codes, Boss guide, Zora and All guides; search through the guide library, six categories and popular-guide links.
+- [Home](/): Persistent top navigation with direct guide links, reload-free page switching and a single current-page highlight; mobile shortcuts for Codes, Boss guide, Zora and All guides; search through the guide library, six categories and popular-guide links.
 - [Guide library](/guides/): Page-based live search, category filters and saved guides; search/filter state persists in the URL for sharing and returning from articles.
 - [What the game is & how to play](/beginners-guide/): What Hellraiser: Revival is, how its combat and puzzle boxes work, and the habits that make the first hours go smoothly.
 - [Walkthrough: where to begin](/walkthrough/): Opening objectives, a first puzzle hint and a route to the full walkthrough.

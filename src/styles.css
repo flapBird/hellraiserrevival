@@ -40,7 +40,7 @@
 @media(max-width:700px){.header-inner{height:73px}.priority-nav{justify-content:space-between;gap:12px}.priority-nav a{font-size:13px}.mobile-menu{max-height:calc(100dvh - 118px)}}
 @media(max-width:380px){.header .brand{gap:7px}.header .brand>svg{width:22px;height:22px}.header .brand-type{gap:5px}.header .brand-type strong,.header .brand-type>span{font-size:11px;letter-spacing:1.4px}.header .brand-type>span{margin-right:-1.4px}.header .icon-button{padding:8px}.category-inner>a{gap:10px}.category-inner>a>svg{width:20px}.category-inner>a>span{font-size:8px;letter-spacing:.5px;gap:4px}.category-inner>a>span>svg{width:10px}}
 
-/* Gold marks the current destination; hover and visited links keep their normal text color. */
-:is(.desktop-nav,.priority-nav,.mobile-menu) a,:is(.desktop-nav,.priority-nav,.mobile-menu) a:visited{color:var(--ink);text-underline-offset:7px;text-decoration-thickness:1px}
-:is(.desktop-nav,.priority-nav,.mobile-menu) a:hover{color:var(--ink);text-decoration:underline}
-:is(.desktop-nav,.priority-nav,.mobile-menu) a[aria-current=page]{color:var(--gold);font-weight:600;text-decoration:underline}
+/* Only the current destination is gold; link widths stay stable and no state adds an underline. */
+:is(.desktop-nav,.priority-nav,.mobile-menu) a,:is(.desktop-nav,.priority-nav,.mobile-menu) a:visited{color:var(--ink);text-decoration:none;font-weight:500}
+:is(.desktop-nav,.priority-nav,.mobile-menu) a:hover{color:#fff;text-decoration:none}
+:is(.desktop-nav,.priority-nav,.mobile-menu) a[aria-current=page]{color:var(--gold);font-weight:500;text-decoration:none}

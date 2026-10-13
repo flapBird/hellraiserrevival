@@ -30,6 +30,7 @@ An independent, English-language fan guide for Clive Barker's *Hellraiser: Reviv
 - All guide content lives in `src/content.js` — edit `seoTitle`/`seoDescription` for search metadata and `description` for compact UI cards; metadata and the sitemap regenerate on build
 - Shared SEO metadata in `src/seo.js` and head rendering in `scripts/seo-head.mjs` serve route-specific canonicals, titles, descriptions, Open Graph and structured data in both initial Vite HTML and prerendered production pages
 - Client-side extras (search, filters, bookmarks, code copy) hydrate on top of the static HTML
+- Internal navigation keeps the header mounted and switches pages without reloading; SEO, browser history, scroll positions and URL-based search filters update with the current route (`src/navigation.js`)
 
 ## Local development
 
