@@ -50,3 +50,5 @@ The site loads Google Analytics (`G-4JJJXB57Y7`) and Microsoft Clarity (`yw1zcvs
 - Search uses the guide library as a full page, never a modal. Header search and `/` focus the library search field; results update inline, with a clear button and query/category/saved filters preserved in the URL for refresh, sharing and returning from articles.
 
 - Internal page links switch without a document reload; keep the header mounted, update SEO on navigation and support back/forward, URL-based library filters and native modified-click/new-tab behavior. Production pages remain prerendered and hydrate on direct loads (user feedback, 2026-10-13).
+
+- Article sidebar help (“Another dead end?”) keeps the cube on the left and the heading, description and link together on the right. KEEP GOING cards must use distinct atmospheric artwork within each group (user feedback, 2026-10-13).
