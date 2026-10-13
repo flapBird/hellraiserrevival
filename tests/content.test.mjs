@@ -1,4 +1,6 @@
 import test from 'node:test';
+import { createHash } from 'node:crypto';
+import { guideArtwork } from '../src/artwork.js';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { guides, categories, navigationLinks, pagePaths, pageMeta, popularGuides, reviewedOn, sources, searchGuides } from '../src/content.js';
@@ -13,6 +15,18 @@ test('Every guide has a unique route, supported category, usable asset and sourc
     guide.related.forEach(slug => assert.ok(guides.some(g => g.slug === slug)));
     assert.equal(new Set(guide.sections.map(s => s.id)).size, guide.sections.length);
   }
+});
+test('Guide covers are distinct files and retain their official source credits', () => {
+  const hashes = guides.map(guide => {
+    const artwork = guideArtwork[guide.image];
+    assert.ok(artwork?.alt);
+    assert.ok(artwork.original.startsWith('https://saber.games/'));
+    const html = readFileSync(`dist/client/${guide.slug}/index.html`, 'utf8');
+    assert.ok(html.includes(artwork.credit));
+    assert.ok(html.includes(`href="${artwork.source}"`));
+    return createHash('sha256').update(readFileSync(`public/assets/${guide.image}.jpg`)).digest('hex');
+  });
+  assert.equal(new Set(hashes).size, guides.length, 'Each guide needs a different cover, not a renamed duplicate');
 });
 test('Search matches multiple words, categories, leading-zero codes and empty results', () => {
   assert.ok(searchGuides('BATHROOM cabinet').some(g => g.slug === 'locker-codes'));
