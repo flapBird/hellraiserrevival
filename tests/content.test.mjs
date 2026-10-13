@@ -66,9 +66,9 @@ test('Every page exposes key guides in the header and marks the current destinat
     for (const href of ['/locker-codes/', '/sister-of-mercy/', '/zora/', '/guides/']) {
       assert.ok(quick.includes(`href="${href}"`), `${path}: mobile shortcut missing ${href}`);
     }
-    if (navigationLinks.some(link => link.href === path)) {
-      assert.ok(desktop.includes(`href="${path}"`) && new RegExp(`<a[^>]*href="${path}"[^>]*aria-current="page"`).test(desktop));
-    }
+    const currentLinks = nav => [...nav.matchAll(/<a[^>]*href="([^"]+)"[^>]*aria-current="page"/g)].map(match => match[1]);
+    assert.deepEqual(currentLinks(desktop), navigationLinks.some(link => link.href === path) ? [path] : [], `${path}: only the current desktop destination`);
+    assert.deepEqual(currentLinks(quick), navigationLinks.some(link => link.priority && link.href === path) ? [path] : [], `${path}: only the current shortcut destination`);
   }
   assert.ok(navigationLinks.every(link => pagePaths.includes(link.href)), 'navigation must resolve to existing pages');
 });

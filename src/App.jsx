@@ -28,7 +28,7 @@ function Header({ path }) {
     document.addEventListener('keydown', closeOnEscape);
     return () => document.removeEventListener('keydown', closeOnEscape);
   }, [menu]);
-  const link = ({ label, href }) => <a key={href} href={href} className={href === '/locker-codes/' ? 'nav-codes' : undefined} aria-current={path === href ? 'page' : undefined}>{label}</a>;
+  const link = ({ label, href }) => <a key={href} href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>;
   return <header className="header">
     <div className="header-inner"><Brand /><nav className="desktop-nav" aria-label="Main navigation">{navigationLinks.map(link)}</nav><div className="header-tools"><a className="icon-button" href={path === '/guides/' ? '#guide-search' : '/guides/?search=1'} onClick={() => setMenu(false)} aria-label="Search guides"><MagnifyingGlass size={25} /></a><button className="icon-button mobile-menu-button" ref={menuButton} aria-label={menu ? 'Close menu' : 'Open menu'} aria-expanded={menu} aria-controls="mobile-menu" onClick={() => setMenu(!menu)}>{menu ? <X size={24} /> : <List size={25} />}</button></div></div>
     <nav className="priority-nav" aria-label="Quick navigation">{navigationLinks.filter(item => item.priority).map(link)}</nav>

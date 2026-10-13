@@ -40,6 +40,7 @@ The site loads Google Analytics (`G-4JJJXB57Y7`) and Microsoft Clarity (`yw1zcvs
 
 - Homepage section headings and guide/link-card titles must stay restrained: Inter, approximately 18px section headings (16px mobile), 16–18px card/subsection headings, moderate weight and tight letter spacing. Avoid the oversized Bodoni headings and widely spaced section labels shown in the rejected screenshots. Hero and brand typography retain their existing conventions.
 - Important guides must be directly reachable from the top navigation. Codes is the first link, followed by walkthrough, puzzles, collectibles, Boss guide, Zora, trophies, PC fixes, playtime and the full library.
+- Navigation gold indicates the current page only, using `aria-current="page"`; never permanently color Codes or visited destinations gold. Desktop, shortcut and mobile-menu links use cream text with an underline on hover, with a visible keyboard-focus outline. The current destination uses gold and an underline (user feedback, 2026-10-13).
 - Keep the header visible while scrolling. At tablet/mobile widths, show Codes, Boss guide, Zora and All guides as a compact second navigation row; keep every destination in the menu as well.
 
 - Apply the same restrained typography throughout inner pages: shared Inter h1 at 32px desktop, 30px tablet and 26px mobile; article/info/empty-state h2 at 20px desktop and 18px mobile; sidebar h3 at 16px. Keep heading levels intact, allow long titles to wrap naturally, and keep the article contents sidebar below the sticky header.
